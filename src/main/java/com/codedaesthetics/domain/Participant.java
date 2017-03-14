@@ -9,7 +9,7 @@ import javax.persistence.*;
 public class Participant {
     @Id
     @GeneratedValue()
-    private Long Id;
+    private Long id;
 
     private String name;
 
@@ -24,11 +24,11 @@ public class Participant {
     protected Participant() {}
 
     public Long getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Long id) {
-        Id = id;
+        this.id = id;
     }
 
     public String getName() {
