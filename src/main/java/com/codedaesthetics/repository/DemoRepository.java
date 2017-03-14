@@ -1,6 +1,6 @@
-package com.example.repository;
+package com.codedaesthetics.repository;
 
-import com.example.domain.Demo;
+import com.codedaesthetics.domain.Demo;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 

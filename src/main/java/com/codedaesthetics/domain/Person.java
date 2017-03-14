@@ -1,4 +1,4 @@
-package com.example.domain;
+package com.codedaesthetics.domain;
 
 import javax.persistence.*;
 
