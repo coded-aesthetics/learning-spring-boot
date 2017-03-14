@@ -1,0 +1,4 @@
+CREATE TABLE `demo` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(1024) NOT NULL,
+  PRIMARY KEY (`id`));
