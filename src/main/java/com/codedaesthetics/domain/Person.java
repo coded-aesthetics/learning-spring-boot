@@ -1,6 +1,7 @@
 package com.codedaesthetics.domain;
 
 import javax.persistence.*;
+import java.util.Date;
 
 /**
  * Created by coded-aesthetics on 10.03.17.
@@ -17,6 +18,8 @@ public class Person {
     @Column(name="last_name")
     private String lastName;
     private String address;
+
+    private Date birthdate;
 
     protected Person() {}
 
@@ -50,5 +53,13 @@ public class Person {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public Date getBirthdate() {
+        return birthdate;
+    }
+
+    public void setBirthdate(Date birthdate) {
+        this.birthdate = birthdate;
     }
 }
