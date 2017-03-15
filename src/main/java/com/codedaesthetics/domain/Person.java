@@ -10,7 +10,7 @@ import javax.persistence.*;
 public class Person {
     @Id
     @GeneratedValue()
-    private Long Id;
+    private Long id;
 
     @Column(name="first_name")
     private String firstName;
@@ -21,11 +21,11 @@ public class Person {
     protected Person() {}
 
     public Long getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Long id) {
-        Id = id;
+        this.id = id;
     }
 
     public String getFirstName() {
