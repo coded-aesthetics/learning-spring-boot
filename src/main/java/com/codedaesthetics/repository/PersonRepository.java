@@ -15,6 +15,8 @@ import java.util.List;
  */
 @RepositoryRestResource(excerptProjection = Person.class)
 public interface PersonRepository extends JpaRepository<Person, Long> {
+    List<Person> findPersonByFirstName(@Param("firstName") String firstName);
+    List<Person> findPersonByLastName(@Param("lastName") String lastName);
     List<Person> findPersonByFirstNameAndLastName(@Param("firstName") String firstName,@Param("lastName") String lastName);
     List<Person> findByFirstNameIn(@Param("firstNames") Collection<String> firstNames);
     List<Person> findByBirthdateBefore(@DateTimeFormat(pattern = "yyyy-MM-dd") @Param("birthdate") Date birthdate);
