@@ -2,6 +2,8 @@ package com.codedaesthetics.controller;
 
 import com.codedaesthetics.domain.Person;
 import com.codedaesthetics.repository.PersonRepository;
+import com.codedaesthetics.resource.PersonResource;
+import com.codedaesthetics.resource.PersonResourceAssembler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,11 +22,11 @@ public class PersonController {
     private PersonRepository personRepository;
 
     @RequestMapping(value = "/gobblediget", method = RequestMethod.GET)
-    public List<Person> getPersonBy(@Param("firstName") String firstName, @Param("lastName") String lastName) {
+    public List<PersonResource> getPersonBy(@Param("firstName") String firstName, @Param("lastName") String lastName, PersonResourceAssembler personResourceAssembler) {
         List<Person> first = personRepository.findPersonByFirstName(firstName);
         List<Person> last = personRepository.findPersonByLastName(lastName);
         first.addAll(last);
 
-        return first;
+        return personResourceAssembler.toResources(first);
     }
 }

@@ -1,5 +1,8 @@
 package com.codedaesthetics.domain;
 
+import org.springframework.hateoas.Resource;
+import org.springframework.hateoas.ResourceSupport;
+
 import javax.persistence.*;
 import java.util.Date;
 
