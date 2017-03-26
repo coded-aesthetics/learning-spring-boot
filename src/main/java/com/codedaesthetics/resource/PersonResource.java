@@ -12,8 +12,6 @@ import java.util.Date;
 /**
  * Created by coded-aesthetics on 23.03.17.
  */
-@XmlRootElement(name="person")
-@XmlSeeAlso({Person.class})
 public class PersonResource extends ResourceSupport {
 
     public Long id;

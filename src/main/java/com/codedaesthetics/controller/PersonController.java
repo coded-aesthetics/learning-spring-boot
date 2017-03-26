@@ -29,7 +29,7 @@ import java.util.List;
  */
 @BasePathAwareController
 @ExposesResourceFor(Person.class)
-@RequestMapping(value = "api/persons/search", produces = {MediaType.APPLICATION_JSON_VALUE, "application/hal+json"})
+@RequestMapping(value = "api/persons", produces = {MediaType.APPLICATION_JSON_VALUE, "application/hal+json"})
 public class PersonController implements ResourceProcessor<RepositorySearchesResource>{
     @Autowired
     private PersonRepository personRepository;
@@ -37,7 +37,7 @@ public class PersonController implements ResourceProcessor<RepositorySearchesRes
     @Autowired
     PersonResourceAssembler personResourceAssembler;
 
-    @RequestMapping(value = "/gobblediget", method = RequestMethod.GET)
+    @RequestMapping(value = "search/gobblediget", method = RequestMethod.GET)
     public ResponseEntity<Resources<PersonResource>> getPersonBy(@RequestParam("firstName") String firstName, @RequestParam("lastName") String lastName) {
         List<Person> first = personRepository.findPersonByFirstName(firstName);
         List<Person> last = personRepository.findPersonByLastName(lastName);
